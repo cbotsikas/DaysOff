@@ -1,21 +1,318 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#123e35" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Plan holidays and personal leave privately on your device."
+      content="Make your leave days go further. Plan time off around your work schedule, holidays and school closures, privately in your browser."
     />
+    <meta name="theme-color" content="#123e35" />
     <link rel="icon" type="image/svg+xml" sizes="any" href="./icon.svg" />
     <link rel="apple-touch-icon" href="./icon-192.png" />
-    <title>DaysOff — Your year, with room to breathe</title>
-    <script type="module" crossorigin src="./assets/index-C1qF1rUA.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/holiday-data-CAM_cj8a.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-DGMguTYo.css">
-  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
-  <body>
-    <div id="root"></div>
+    <title>DaysOff — Make room for days off</title>
+    <script type="module" crossorigin src="./assets/landing-BAsXPGGB.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-P2Xu9kJm.js">
+    <link rel="stylesheet" crossorigin href="./assets/landing-gwGJeOzY.css">
+  </head>
+  <body id="top">
+    <a href="#main" class="skip">Skip to content</a>
+    <header>
+      <a class="brand" href="#top" aria-label="DaysOff home"
+        ><svg
+          width="33"
+          height="33"
+          viewBox="0 0 40 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="20"
+            cy="20"
+            r="16"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path d="M20 4v16h16" stroke="currentColor" stroke-width="1.8" /></svg
+        >DaysOff</a
+      >
+      <nav aria-label="Main">
+        <a class="how-link" href="#how">How it works</a
+        ><a href="#questions">Questions</a><a href="./app/">Open planner ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Make room<span>for days off.</span></h1>
+          <div>
+            <p class="intro">
+              A leave planner that brings your work schedule, holidays and
+              personal dates together. See the breaks you can make.
+            </p>
+            <a class="button" href="./app/"
+              >Plan your days off <span aria-hidden="true">↗</span></a
+            >
+            <p class="quiet">
+              Free to use. No account. Your plan stays with you.
+            </p>
+          </div>
+        </div>
+        <div class="demo" data-ui>
+          <div class="calendar-fragment">
+            <div class="fragment-heading">
+              <strong>A little planning. A longer break.</strong
+              ><span>28 Mar – 5 Apr 2026</span>
+            </div>
+            <div
+              class="day-strip"
+              role="group"
+              aria-label="Try selecting annual leave around Good Friday"
+            >
+              <div class="day">
+                <span class="weekday">Sat</span><span class="date">28</span
+                ><span class="type"></span>
+              </div>
+              <div class="day">
+                <span class="weekday">Sun</span><span class="date">29</span
+                ><span class="type"></span>
+              </div>
+              <button
+                type="button"
+                class="day"
+                data-leave
+                aria-pressed="true"
+                aria-label="Annual leave Monday 30 March"
+              >
+                <span class="weekday">Mon</span><span class="date">30</span
+                ><span class="type">A</span></button
+              ><button
+                type="button"
+                class="day"
+                data-leave
+                aria-pressed="true"
+                aria-label="Annual leave Tuesday 31 March"
+              >
+                <span class="weekday">Tue</span><span class="date">31</span
+                ><span class="type">A</span></button
+              ><button
+                type="button"
+                class="day"
+                data-leave
+                aria-pressed="true"
+                aria-label="Annual leave Wednesday 1 April"
+              >
+                <span class="weekday">Wed</span><span class="date">1</span
+                ><span class="type">A</span></button
+              ><button
+                type="button"
+                class="day"
+                data-leave
+                aria-pressed="true"
+                aria-label="Annual leave Thursday 2 April"
+              >
+                <span class="weekday">Thu</span><span class="date">2</span
+                ><span class="type">A</span>
+              </button>
+              <div class="day holiday">
+                <span class="weekday">Fri</span><span class="date">3</span
+                ><span class="type"></span>
+              </div>
+              <div class="day">
+                <span class="weekday">Sat</span><span class="date">4</span
+                ><span class="type"></span>
+              </div>
+              <div class="day">
+                <span class="weekday">Sun</span><span class="date">5</span
+                ><span class="type"></span>
+              </div>
+            </div>
+            <div class="legend">
+              <span><i class="swatch"></i>Annual leave</span
+              ><span><i class="swatch holiday"></i>Good Friday</span
+              ><span><i class="swatch weekend"></i>Weekend</span>
+            </div>
+          </div>
+          <div class="result" aria-live="polite" aria-atomic="true">
+            <p class="result-number" id="break-days">9</p>
+            <p class="result-label">days off in a row</p>
+            <p class="equation">
+              <span id="leave-days">4</span> days of annual leave
+            </p>
+            <button type="button" class="demo-reset" id="demo-toggle">
+              Try without the leave
+            </button>
+          </div>
+        </div>
+        <p class="example-note">
+          An example for a Monday–Friday schedule with Good Friday off. Select
+          the leave dates to try it.
+        </p>
+      </section>
+      <section class="explain" id="how" aria-labelledby="how-title">
+        <div>
+          <h2 id="how-title">Your year.<br />Your workweek.</h2>
+          <p class="section-intro">
+            More useful than a list of holidays. DaysOff shows what those dates
+            mean for your time.
+          </p>
+        </div>
+        <div class="details">
+          <article class="detail">
+            <div>
+              <h3>Keep your allowance in sight</h3>
+              <p>
+                Plan annual leave and other leave types, with a clear count of
+                what is planned and what remains.
+              </p>
+            </div>
+            <div class="small-fragment" data-ui>
+              <div class="balance-top">
+                <span><i class="type-symbol">A</i>Annual leave</span
+                ><span><b id="planned-count">4</b> of 25</span>
+              </div>
+              <div class="remaining">
+                <span id="remaining-count">21</span> days remaining
+              </div>
+              <div class="progress"><span id="allowance-progress"></span></div>
+            </div>
+          </article>
+          <article class="detail schedule-example">
+            <div>
+              <h3>Fit your actual schedule</h3>
+              <p>
+                A
+                <button
+                  type="button"
+                  class="schedule-case"
+                  data-schedule="0"
+                  aria-pressed="true"
+                >
+                  four-day week</button
+                >, a
+                <button
+                  type="button"
+                  class="schedule-case"
+                  data-schedule="1"
+                  aria-pressed="false"
+                >
+                  fortnightly schedule
+                </button>
+                with alternating Fridays off, or a
+                <button
+                  type="button"
+                  class="schedule-case"
+                  data-schedule="3"
+                  aria-pressed="false"
+                >
+                  repeating shift pattern</button
+                >. Only days you normally work need leave.
+              </p>
+            </div>
+            <div class="small-fragment" data-ui>
+              <div
+                class="workdays"
+                role="img"
+                aria-label="Four-day week: Monday to Thursday working, Friday to Sunday off"
+              >
+                <span class="on">Mon</span><span class="on">Tue</span
+                ><span class="on">Wed</span><span class="on">Thu</span
+                ><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+              <div class="schedule-controls">
+                <span id="schedule-caption">Every week</span
+                ><button
+                  type="button"
+                  id="schedule-pause"
+                  aria-label="Pause schedule examples"
+                >
+                  Pause
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="detail">
+            <div>
+              <h3>See the dates around your plan</h3>
+              <p>
+                Add school closures, important dates and your own holidays. Keep
+                the family calendar in view.
+              </p>
+            </div>
+            <div class="small-fragment" data-ui>
+              <div
+                class="school-example"
+                role="img"
+                aria-label="School closure with leave planned on Tuesday and Wednesday"
+              >
+                <span class="school-date">20</span
+                ><span class="school-date">21</span
+                ><span class="school-date">22</span
+                ><span class="school-date">23</span
+                ><span class="school-date">24</span>
+              </div>
+              <div class="school-caption">School closure · 20–24 July</div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="privacy" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">Your plan stays<br />in your browser.</h2>
+        <p>
+          No sign-up, no account to manage. Your dates are saved on this device.
+          Open DaysOff once online, then keep planning offline—or print your
+          calendar and take it with you.
+        </p>
+      </section>
+      <section class="faq" id="questions" aria-labelledby="faq-title">
+        <h2 id="faq-title">A few useful answers.</h2>
+        <div class="questions">
+          <details>
+            <summary>Is DaysOff free?</summary>
+            <p>
+              Yes. You can plan your leave without creating an account or
+              starting a subscription.
+            </p>
+          </details>
+          <details>
+            <summary>Can I use my own holidays?</summary>
+            <p>
+              Yes. Add your own days off and important dates, including
+              repeating events. Automatic country and regional holiday data is
+              optional.
+            </p>
+          </details>
+          <details>
+            <summary>Will my plan appear on another device?</summary>
+            <p>
+              Your plan is stored in the browser where you create it. It does
+              not automatically sync to other browsers or devices. Clearing that
+              browser’s site data removes the saved plan.
+            </p>
+          </details>
+          <details>
+            <summary>Does it replace my employer’s leave system?</summary>
+            <p>
+              DaysOff helps you plan. It does not submit leave requests or
+              confirm approval. Check your allowance, holidays and leave
+              arrangements with your employer.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="close" aria-labelledby="close-title">
+        <h2 id="close-title">Find a little more<br />time for yourself.</h2>
+        <a class="button" href="./app/"
+          >Open your planner <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer>
+      <a href="#top" class="brand">DaysOff</a>
+      <div class="footer-links">
+        <a href="#how">How it works</a><a href="#questions">Questions</a>
+      </div>
+      <p class="footer-note">Make room for life.</p>
+    </footer>
   </body>
 </html>
